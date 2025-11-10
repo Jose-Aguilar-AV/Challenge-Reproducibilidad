@@ -1,0 +1,47 @@
+
+═══════════════════════════════════════════════════════════
+          REPORTE FINAL DEL MR-DBSCAN CHALLENGE
+═══════════════════════════════════════════════════════════
+
+CONFIGURACIÓN DEL ALGORITMO:
+  - Eps (epsilon): 0.002
+  - MinPts (mínimo de puntos): 1000
+  - Número de particiones (strips): 120
+
+DATOS DE ENTRADA:
+  - Total de puntos: 49,662
+  - Rango Longitud: [121.148300, 121.866100]
+  - Rango Latitud: [30.886600, 31.999100]
+
+STAGE 1 - PARTICIONAMIENTO:
+  - Número total de particiones con datos: 1873
+  - Puntos por partición (promedio): 26.5
+
+STAGE 2 - DBSCAN LOCAL:
+  - Clusters locales identificados: 1
+  - Puntos en clusters locales: 2,436
+  - Puntos noise/outliers locales: 47,226
+
+STAGE 3 - DETECCIÓN DE CRUCES:
+  - Puntos frontera identificados: 34,814
+  - MC Sets (candidatos para fusión): 265
+  - Pares de clusters fusionados: 0
+
+STAGE 4 - FUSIÓN GLOBAL:
+  - Clusters globales finales: 2
+  - Puntos en clusters globales: 2,436
+  - Puntos noise finales: 47,226
+
+CALIDAD DE CLUSTERING:
+  - Pureza (% puntos en clusters): 4.9%
+  - Tamaño máximo de cluster: 1,281 puntos
+  - Tamaño mínimo de cluster: 1155 puntos
+  - Tamaño promedio: 1218.0 puntos
+  - Desviación estándar: 89.1
+
+ARCHIVOS GENERADOS:
+  - mr_dbscan_results.csv
+  - clustering_summary.csv
+  - mr_dbscan_report.txt
+
+═══════════════════════════════════════════════════════════

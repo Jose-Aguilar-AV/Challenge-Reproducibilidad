@@ -51,18 +51,18 @@ def unificar_dataset(data_folder='Taxi_070220', output_file='taxi_data_unificado
     if total_files == 0:
         raise ValueError(f"No se encontraron archivos en la carpeta {data_folder}")
     
-    print(f"✓ Archivos encontrados: {total_files:,}")
+    print(f"Archivos encontrados: {total_files:,}")
     
     # Limitar archivos si se especifica
     if max_files is not None and max_files < total_files:
         data_files = data_files[:max_files]
-        print(f"⚠ Usando solo los primeros {max_files:,} archivos (modo prueba)")
+        print(f"Usando solo los primeros {max_files:,} archivos (modo prueba)")
         print(f"  Para procesar todos, ejecutar sin --max-files")
     else:
-        print(f"✓ Procesando todos los {total_files:,} archivos")
+        print(f"Procesando todos los {total_files:,} archivos")
     
     print()
-    print("⏳ Leyendo archivos...")
+    print("Leyendo archivos...")
     print("-" * 70)
     
     # Procesar archivos en lotes
@@ -105,7 +105,7 @@ def unificar_dataset(data_folder='Taxi_070220', output_file='taxi_data_unificado
             except Exception as e:
                 errors_count += 1
                 if errors_count <= 5:
-                    print(f"  ⚠ Error al leer {file_path.name}: {e}")
+                    print(f"Error al leer {file_path.name}: {e}")
                 continue
         
         # Combinar datos del lote
@@ -120,7 +120,7 @@ def unificar_dataset(data_folder='Taxi_070220', output_file='taxi_data_unificado
               f"Filas acumuladas: {total_rows:,}")
     
     if errors_count > 5:
-        print(f"\n⚠ Total de archivos con errores: {errors_count}")
+        print(f"\nTotal de archivos con errores: {errors_count}")
     
     if len(data_list) == 0:
         raise ValueError("No se pudo leer ningún archivo. Verifica el formato de los archivos.")
@@ -128,14 +128,14 @@ def unificar_dataset(data_folder='Taxi_070220', output_file='taxi_data_unificado
     # Combinar todos los DataFrames
     print()
     print("-" * 70)
-    print(f"⏳ Combinando {len(data_list):,} lotes de datos...")
+    print(f"Combinando {len(data_list):,} lotes de datos...")
     data = pd.concat(data_list, ignore_index=True)
     
-    print(f"✓ Datos combinados: {len(data):,} filas")
+    print(f"Datos combinados: {len(data):,} filas")
     
     # Limpiar datos
     print()
-    print("⏳ Limpiando datos...")
+    print(" Limpiando datos...")
     initial_count = len(data)
     
     # Eliminar valores nulos
@@ -152,7 +152,7 @@ def unificar_dataset(data_folder='Taxi_070220', output_file='taxi_data_unificado
     
     # Guardar a CSV
     print()
-    print("⏳ Guardando archivo CSV...")
+    print("Guardando archivo CSV...")
     output_path = Path(output_file)
     data.to_csv(output_path, index=False)
     
@@ -160,7 +160,7 @@ def unificar_dataset(data_folder='Taxi_070220', output_file='taxi_data_unificado
     
     print()
     print("=" * 70)
-    print("✓ UNIFICACIÓN COMPLETADA")
+    print("UNIFICACIÓN COMPLETADA")
     print("=" * 70)
     print(f"  - Archivo de salida: {output_file}")
     print(f"  - Tamaño del archivo: {file_size_mb:.2f} MB")
@@ -231,7 +231,7 @@ Ejemplos de uso:
             max_files=args.max_files,
             batch_size=args.batch_size
         )
-        print(f"\n✓ Archivo generado exitosamente: {output_path}")
+        print(f"\nArchivo generado exitosamente: {output_path}")
         sys.exit(0)
     except Exception as e:
         print(f"\n✗ Error: {e}")
