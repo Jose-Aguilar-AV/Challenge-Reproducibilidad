@@ -196,14 +196,6 @@ Se ha generado un informe completo en LaTeX que documenta:
 
 **Ubicación:** `informe/informe_mr_dbscan.tex`
 
-**Compilación:** Ver `INSTRUCCIONES_COMPILACION.md` para instrucciones detalladas.
-
-```bash
-# Compilación rápida
-pdflatex informe/informe_mr_dbscan.tex
-pdflatex informe/informe_mr_dbscan.tex  # Segunda pasada para referencias
-```
-
 ## Autores y Responsabilidades
 
 - **Jose:** Etapa 1 (Preprocesamiento y Particionado) + Setup inicial
